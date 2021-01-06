@@ -1,0 +1,19 @@
+<form [formGroup]="connectionForm">
+
+  <label for="Name">Name</label><br>
+  <input type="text" formControlName='username'>
+  <button type="button" (click)="toggleConnection()">{{buttonText}}</button>
+  <br><br>
+  <label for="Message">Message</label><br>
+  <input type="text" formControlName='message'>
+  <button type="button" (click)="sendMsg()">Send</button>
+
+</form>
+
+<h4>Chats:</h4>
+<div *ngFor="let m of messages">
+  
+  <code *ngIf="m.from !== undefined">{{m.from}}</code>
+  <p>{{m.message}}</p>
+
+</div>
